@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
   {
     rb = GetComponent<Rigidbody>();
   }
+  void OnTriggerEnter(Collider other)
+  {
+    if (other.gameObject.CompareTag("PickUp"))
+    {
+      other.gameObject.SetActive(false);
+    }
+  }
   void FixedUpdate()
   {
     // Get the input values for the keys.
